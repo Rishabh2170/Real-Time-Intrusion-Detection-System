@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FormantAI Quotation Cover</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 60px;
+            /* Margins */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+        /* Top Section */
+        
+        .header {
+            margin-top: 20px;
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 50px;
+            margin: 0 auto 15px auto;
+            border: 2px dashed #333;
+            /* Placeholder for your Lip/Wave logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #555;
+        }
+        
+        .company-name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #000;
+            text-transform: uppercase;
+        }
+        /* Middle Section */
+        
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .doc-type {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-size: 64px;
+            font-weight: 800;
+            color: #222;
+            margin: 10px 0;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: #000;
+            /* Minimalist black accent */
+            margin: 30px auto;
+        }
+        
+        .pitch {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+            max-width: 80%;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        /* Bottom Section */
+        
+        .footer-section {
+            margin-bottom: 40px;
+        }
+        
+        .backed-by {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .google-logo {
+            /* Using a public URL for the Google logo for display purposes */
+            width: 100px;
+            opacity: 0.7;
+        }
+        
+        .legal-footer {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            font-size: 10px;
+            color: #777;
+            text-align: left;
+        }
+        
+        .footer-right {
+            text-align: right;
+        }
+        /* Print settings to ensure A4 sizing */
+        
+        @media print {
+            body {
+                background: none;
+            }
+            .a4-page {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="a4-page">
+
+        <div class="header">
+            <div class="logo-placeholder">[INSERT WAVE LOGO]</div>
+            <div class="company-name">FormantAI</div>
+        </div>
+
+        <div class="content">
+            <div class="doc-type">Quotation Proposal For</div>
+            <div class="client-name">LorcAI</div>
+            <div class="divider"></div>
+            <div class="pitch">
+                "An IIT-led research and development company focused on<br> deep, cutting-edge research in Artificial Intelligence." </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="backed-by">Backed By</div> <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="google-logo">
+
+            <br><br><br>
+
+            <div class="legal-footer">
+                <div>
+                    <strong>Proposal Submitted By:</strong><br> FormantAI Research Pvt. Ltd. </div>
+                <div class="footer-right">
+                    <strong>Sinara oAI Quotation</strong><br> Confidential & Proprietary
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

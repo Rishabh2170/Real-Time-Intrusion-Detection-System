@@ -1,0 +1,187 @@
+# Project Description: Real-time Intrusion Detection System (IDS)
+
+## Overview
+The Real-time Intrusion Detection System (IDS) is a comprehensive application designed to monitor and analyze network traffic in real-time. It leverages machine learning algorithms to detect known attacks and identify anomalies in network behavior. This project is built entirely by ravindrapal01 and aims to provide a robust solution for network security.
+
+---
+
+## Key Features
+1. **Real-time Flow Capture**:
+   - Captures network traffic in real-time and processes it for analysis.
+   - Provides an overview of network flows and detailed insights into each flow.
+
+2. **Machine Learning Integration**:
+   - Combines supervised and unsupervised learning techniques for intrusion detection.
+   - Detects both known attacks and unknown anomalies.
+
+3. **Web-based Interface**:
+   - User-friendly web application for monitoring and managing network traffic.
+   - Accessible via [http://localhost:5000](http://localhost:5000).
+
+---
+
+## Layers of the Project
+### 1. **Data Collection Layer**:
+   - Captures network packets using tools like Npcap.
+   - Extracts relevant features from the packets for analysis.
+
+### 2. **Preprocessing Layer**:
+   - Cleans and transforms raw data into a format suitable for machine learning.
+   - Utilizes a preprocessing pipeline saved as `preprocess_pipeline_AE_39ft.save`.
+
+### 3. **Machine Learning Layer**:
+   - **Supervised Learning**:
+     - Algorithm: Random Forest (RF).
+     - Dataset: CICIDS 2018 & SCVIC-APT datasets.
+     - Purpose: Detect known attack patterns.
+   - **Unsupervised Learning**:
+     - Algorithm: Autoencoder (AE).
+     - Model: `autoencoder_39ft.hdf5`.
+     - Purpose: Identify anomalies in network traffic.
+
+### 4. **Web Application Layer**:
+   - Built using Flask framework.
+   - Provides real-time visualization of network flows and detailed insights.
+
+---
+
+## Layers of Security Implemented
+1. **Network Traffic Monitoring**:
+   - Captures and analyzes network packets in real-time to identify potential threats.
+
+2. **Feature Extraction and Preprocessing**:
+   - Extracts critical features from network flows to enhance the accuracy of detection algorithms.
+
+3. **Supervised Detection**:
+   - Uses Random Forest to classify known attack patterns based on labeled datasets.
+
+4. **Anomaly Detection**:
+   - Employs Autoencoder to detect deviations from normal network behavior, identifying unknown threats.
+
+5. **Data Encryption**:
+   - Ensures secure storage and transmission of sensitive data within the system.
+
+6. **Access Control**:
+   - Implements role-based access to restrict unauthorized access to the application.
+
+7. **Logging and Auditing**:
+   - Maintains detailed logs of network activity and detection results for auditing and forensic analysis.
+
+8. **Web Application Security**:
+   - Protects the web interface against common vulnerabilities such as Cross-Site Scripting (XSS) and SQL Injection.
+
+---
+
+## Libraries and Tools Used
+1. **Python Libraries**:
+   - `Flask`: For building the web application.
+   - `scikit-learn`: For implementing the Random Forest algorithm.
+   - `tensorflow/keras`: For building and training the Autoencoder model.
+   - `pandas` and `numpy`: For data manipulation and preprocessing.
+   - `matplotlib` and `seaborn`: For data visualization.
+
+2. **Other Tools**:
+   - `Npcap`: For capturing network packets.
+   - `h5py`: For saving and loading the Autoencoder model.
+
+---
+
+## How It Works
+1. **Data Flow**:
+   - Network packets are captured in real-time.
+   - Features are extracted and passed through the preprocessing pipeline.
+
+2. **Detection**:
+   - Preprocessed data is analyzed using the Random Forest model for known attacks.
+   - Anomalies are detected using the Autoencoder model.
+
+3. **Visualization**:
+   - Results are displayed on the web application.
+   - Users can view an overview of network flows and drill down into specific details.
+
+---
+
+## How to Run the Project
+1. **Setup**:
+   - Install Python 3.9 and Npcap.
+   - Clone the repository and set up a virtual environment.
+   - Install dependencies using `pip install -r requirements.txt`.
+
+2. **Run the Application**:
+   - Start the application using `python application.py`.
+   - Access the web app at [http://localhost:5000](http://localhost:5000).
+
+---
+
+## Algorithms Used
+1. **Random Forest**:
+   - Supervised learning algorithm.
+   - Used for classifying known attack patterns.
+
+2. **Autoencoder**:
+   - Unsupervised learning algorithm.
+   - Used for anomaly detection by reconstructing input data and identifying deviations.
+
+---
+
+## File Structure
+- `application.py`: Main application file.
+- `flow/`: Contains modules for handling network flows.
+  - `Flow.py`: Manages flow data.
+  - `FlowFeature.py`: Extracts features from flows.
+  - `PacketInfo.py`: Handles packet-level information.
+- `models/`: Contains machine learning models and pipelines.
+  - `autoencoder_39ft.hdf5`: Pre-trained Autoencoder model.
+  - `preprocess_pipeline_AE_39ft.save`: Preprocessing pipeline.
+- `static/`: Contains CSS and JavaScript files for the web app.
+- `templates/`: HTML templates for the web app.
+- `requirements.txt`: Lists all dependencies.
+- `README.md`: Project overview and setup instructions.
+
+---
+
+## Author
+This project is developed and maintained by ravindrapal01. For any queries or contributions, feel free to reach out.
+
+---
+
+## Future Enhancements
+1. Add support for additional datasets.
+2. Implement more advanced anomaly detection algorithms.
+3. Enhance the web interface with more visualization options.
+
+---
+
+This document provides a complete overview of the project, ensuring that anyone can understand its structure, functionality, and purpose.
+
+---
+
+## How This System Differs from Current Systems
+This IDS system differs from current systems in the following ways:
+1. **Real-time Flow Capture**:
+   - Unlike traditional systems that capture packets at regular intervals, this system captures packets in real-time, providing an immediate view of network activity.
+   - This allows for more accurate and timely detection of anomalies and attacks.
+
+2. **Machine Learning Integration**:
+   - Current systems often rely on rule-based detection, which can miss unknown or sophisticated attacks.
+   - This system uses machine learning algorithms to detect both known attacks and unknown anomalies, providing a more comprehensive security solution.
+
+3. **Web-based Interface**:
+   - Current systems may not provide a user-friendly interface for monitoring and managing network traffic.
+   - This system offers a web-based interface that is accessible and easy to use, allowing users to monitor network activity and drill down into specific details.
+
+4. **Anomaly Detection**:
+   - Current systems may not detect unknown threats effectively.
+   - This system uses Autoencoder to detect deviations from normal network behavior, identifying unknown threats.
+
+5. **Scalability**:
+   - Current systems may not scale well with increasing network traffic.
+   - This system is designed to handle large volumes of network traffic efficiently.
+
+6. **Real-time Analysis**:
+   - Current systems may not provide real-time analysis of network traffic.
+   - This system provides real-time analysis, allowing for immediate response to threats.
+
+---
+
+This document provides a complete overview of the project, ensuring that anyone can understand its structure, functionality, and purpose.
